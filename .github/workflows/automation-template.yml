@@ -27,7 +27,6 @@ on:
         description: "Tags to filter Playwright tests"
         type: string
         required: false
-        default: "smoke"
 
     secrets:
       buyer_password:
