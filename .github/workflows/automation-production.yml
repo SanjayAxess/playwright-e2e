@@ -1,0 +1,22 @@
+name: Run Tests - PRODUCTION
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - trigger-tests-prod
+
+jobs:
+  call-template:
+    uses: ./.github/workflows/automation-template.yml
+    with:
+      env_name: "PRODUCTION"
+      url: "https://prod-home.integrate.com/"
+      buyer_username: "automation-prod@integrateteam.com"
+      mongo_db: "neo_prod"
+    secrets:
+      buyer_password: ${{ secrets.BUYER_PASSWORD_PROD }}
+      org_id: ${{ secrets.ORG_ID_PROD }}
+      mongo_uri: ${{ secrets.MONGO_URI_PROD }}
+      teams_webhook_url: ${{ secrets.TEAMS_WEBHOOK_PROD }}
+      nexus_npm_token: ${{ secrets.NEXUS_NPM_TOKEN }}
