@@ -1,5 +1,7 @@
 name: Run Tests - PRODUCTION
 
+permissions: contents: write
+
 on:
   workflow_dispatch:
   repository_dispatch:
