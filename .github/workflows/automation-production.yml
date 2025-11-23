@@ -20,3 +20,231 @@ jobs:
       mongo_uri: ${{ secrets.MONGO_URI_PROD }}
       teams_webhook_url: ${{ secrets.TEAMS_WEBHOOK_PROD }}
       nexus_npm_token: ${{ secrets.NEXUS_NPM_TOKEN }}
+
+  deploy-report:
+    name: Publish HTML Report and Notify Teams
+    needs: [merge-reports, start-timer]
+    if: ${{ always() && github.ref == 'refs/heads/main'}}
+    runs-on: [DevOpsLargeRunner]
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install jq for JSON processing
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Download merged HTML report artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-report
+          path: ./playwright-report
+
+      - name: Prepare gh-pages content with run-scoped folder
+        run: |
+          set -e
+          RUN_ID="${{ github.run_id }}"
+          REPORT_TMP="$RUNNER_TEMP/report"
+          mkdir -p "$REPORT_TMP"
+          cp -r ./playwright-report/* "$REPORT_TMP/" || true
+          rm -rf site
+          # Clone gh-pages if exists; otherwise initialize
+          REPO_URL="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git clone --depth 1 --branch gh-pages "$REPO_URL" site || {
+            mkdir -p site
+            cd site
+            git init
+            git checkout -b gh-pages
+            git remote add origin "$REPO_URL"
+            echo "<html><body><h3>Reports</h3></body></html>" > index.html
+            git add -A
+            git commit -m "Initialize gh-pages branch" || true
+            git push -u origin gh-pages
+            cd ..
+          }
+          cd site
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p "runs/$RUN_ID"
+          rm -rf "runs/$RUN_ID"
+          mkdir -p "runs/$RUN_ID"
+          cp -r "$REPORT_TMP/"* "runs/$RUN_ID/" || true
+          # Update latest pointer for convenience
+          rm -rf latest
+          mkdir -p latest
+          cp -r "$REPORT_TMP/"* latest/ || true
+          # Ensure index exists
+          if [ ! -f index.html ]; then echo "<html><body><h3>Reports</h3></body></html>" > index.html; fi
+
+      - name: Update history.json with current run
+        continue-on-error: true
+        working-directory: ./site
+        run: |
+          set -e
+
+          # Only track history for main branch runs
+          if [ "${{ github.ref }}" != "refs/heads/main" ]; then
+            echo "⏭️  Skipping history tracking - not on main branch (ref: ${{ github.ref }})"
+            exit 0
+          fi
+
+          echo "✅ Tracking history for main branch run"
+
+          # Read existing history or create empty array
+          if [ -f history.json ]; then
+            echo "✅ Found existing history.json"
+            HISTORY=$(cat history.json)
+          else
+            echo "⚠️ No history.json found, creating new one"
+            HISTORY="[]"
+          fi
+
+          # Get current date and timestamp in ISO format
+          CURRENT_DATE=$(date -u +"%Y-%m-%d")
+          CURRENT_TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+          # Create new entry for this run
+          NEW_ENTRY=$(cat <<EOF
+          {
+            "date": "$CURRENT_DATE",
+            "timestamp": "$CURRENT_TIMESTAMP",
+            "passed": ${{ needs.merge-reports.outputs.passed }},
+            "failed": ${{ needs.merge-reports.outputs.failed }},
+            "skipped": ${{ needs.merge-reports.outputs.skipped }},
+            "flaky": ${{ needs.merge-reports.outputs.flaky }},
+            "total": $((${{ needs.merge-reports.outputs.passed }} + ${{ needs.merge-reports.outputs.failed }} + ${{ needs.merge-reports.outputs.skipped }} + ${{ needs.merge-reports.outputs.flaky }})),
+            "passPercentage": ${{ needs.merge-reports.outputs.passPercentage }},
+            "runId": "${{ github.run_id }}"
+          }
+          EOF
+          )
+
+          # Append new entry to history
+          UPDATED_HISTORY=$(echo "$HISTORY" | jq ". += [$NEW_ENTRY]")
+
+          # Calculate date 30 days ago
+          CUTOFF_DATE=$(date -u -d "30 days ago" +"%Y-%m-%d" 2>/dev/null || date -u -v-30d +"%Y-%m-%d")
+
+          # Filter to keep only last 30 days
+          FILTERED_HISTORY=$(echo "$UPDATED_HISTORY" | jq "[.[] | select(.date >= \"$CUTOFF_DATE\")]")
+
+          # Write updated history
+          echo "$FILTERED_HISTORY" > history.json
+
+          # Log summary
+          ENTRY_COUNT=$(echo "$FILTERED_HISTORY" | jq 'length')
+          echo "✅ Updated history.json with $ENTRY_COUNT entries (last 30 days)"
+          echo "   Current run: Pass ${{ needs.merge-reports.outputs.passPercentage }}% (P:${{ needs.merge-reports.outputs.passed }} F:${{ needs.merge-reports.outputs.failed }} S:${{ needs.merge-reports.outputs.skipped }} FL:${{ needs.merge-reports.outputs.flaky }})"
+
+      - name: Generate trends.html
+        continue-on-error: true
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          set -e
+          node scripts/generate-trends-html.js ./site/history.json ./site/trends.html
+
+      - name: Commit and push to gh-pages
+        working-directory: ./site
+        run: |
+          set -e
+          git add -A
+          git commit -m "Add report for run ${{ github.run_id }} with trends" || echo "No changes to commit"
+          git push origin gh-pages
+
+      - name: Wait for GitHub Pages to publish run URL
+        if: always()
+        env:
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          set -e
+          OWNER="${GITHUB_REPOSITORY%%/*}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          BASE_URL="https://$OWNER.github.io/$REPO"
+          RUN_URL="$BASE_URL/runs/$RUN_ID/index.html"
+          echo "Waiting for report to be live at: $RUN_URL"
+          # Poll up to ~2 minutes for 200 OK (handle GH Pages propagation)
+          for i in $(seq 1 24); do
+            CODE=$(curl -s -o /dev/null -w "%{http_code}" -H 'Cache-Control: no-cache' "$RUN_URL?ts=$(date +%s)")
+            echo "Attempt $i -> HTTP $CODE"
+            if [ "$CODE" = "200" ]; then
+              echo "Report is live."
+              break
+            fi
+            sleep 3
+          done
+
+      - name: Notify Teams with Workflow and HTML report links
+        if: always()
+        env:
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          START_TS: ${{ needs.start-timer.outputs.start_ts }}
+        run: |
+          STATUS="${{ needs.merge-reports.result }}"
+          COLOR="Good"; [ "$STATUS" != "success" ] && COLOR="Attention"
+          CURRENT_TIME="$(TZ='America/Phoenix' date '+%Y-%m-%d %I:%M %p %Z')"
+          OWNER="${GITHUB_REPOSITORY_OWNER}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          BASE_URL="https://${OWNER}.github.io/${REPO}"
+          REPORT_URL="${BASE_URL%/}/runs/${{ github.run_id }}/index.html"
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          NOW_TS="$(date +%s)"
+          if [ -z "$START_TS" ]; then START_TS="$NOW_TS"; fi
+          OVERALL_SEC="$((NOW_TS - START_TS))"
+          if [ "$OVERALL_SEC" -lt 0 ]; then OVERALL_SEC=0; fi
+          OVERALL_MIN="$((OVERALL_SEC/60))"
+          OVERALL_REM_SEC="$((OVERALL_SEC%60))"
+          OVERALL_MINSEC="${OVERALL_MIN}m ${OVERALL_REM_SEC}s"
+
+          TRENDS_URL="${BASE_URL%/}/trends.html"
+
+          cat > message.json <<EOF
+          {
+            "type": "message",
+            "attachments": [
+              {
+                "contentType": "application/vnd.microsoft.card.adaptive",
+                "content": {
+                  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                  "type": "AdaptiveCard",
+                  "version": "1.4",
+                  "body": [
+                    { "type": "TextBlock", "size": "Large", "weight": "Bolder", "text": "📢 Playwright Tests completed: $STATUS", "color": "$COLOR" },
+                    {
+                      "type": "FactSet",
+                      "facts": [
+                        { "title": "✅ Passed", "value": "${{ needs.merge-reports.outputs.passed }}" },
+                        { "title": "❌ Failed", "value": "${{ needs.merge-reports.outputs.failed }}" },
+                        { "title": "⚠️ Skipped", "value": "${{ needs.merge-reports.outputs.skipped }}" },
+                        { "title": "⚡ Flaky", "value": "${{ needs.merge-reports.outputs.flaky }}" },
+                        { "title": "📊 Pass %", "value": "${{ needs.merge-reports.outputs.passPercentage }}%" },
+                        { "title": "⏱ Total Run Time", "value": "$OVERALL_MINSEC" },
+                        { "title": "🕒 Completed At (AZ)", "value": "$CURRENT_TIME" }
+                      ]
+                    },
+                    {
+                      "type": "Image",
+                      "url": "${{ needs.merge-reports.outputs.pieUrl }}",
+                      "altText": "Test Results Pie Chart",
+                      "size": "Stretch"
+                    }
+                  ],
+                  "actions": [
+                    { "type": "Action.OpenUrl", "title": "🔗 View Workflow Run", "url": "$RUN_URL" },
+                    { "type": "Action.OpenUrl", "title": "📄 Open HTML Report", "url": "$REPORT_URL" },
+                    { "type": "Action.OpenUrl", "title": "📈 View Trends", "url": "$TRENDS_URL" }
+                  ]
+                }
+              }
+            ]
+          }
+          EOF
+          curl -H "Content-Type: application/json" -d @message.json "$TEAMS_WEBHOOK_URL"
