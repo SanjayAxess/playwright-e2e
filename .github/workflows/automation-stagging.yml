@@ -22,7 +22,7 @@ jobs:
       - name: Set start timestamp
         id: mark
         run: echo "start_ts=$(date +%s)" >> "$GITHUB_OUTPUT"
-        
+
   call-template:
     uses: ./.github/workflows/automation-template.yml
     with:
@@ -37,6 +37,86 @@ jobs:
       teams_webhook_url: ${{ secrets.TEAMS_WEBHOOK_STG }}
       nexus_npm_token: ${{ secrets.NEXUS_NPM_TOKEN }}
 
+  merge-reports:
+    name: Merge Playwright Reports
+    runs-on: [DevOpsLargeRunner]
+    needs: [start-timer, run-tests]
+    if: always()
+
+    outputs:
+      passed: ${{ steps.results.outputs.passed }}
+      failed: ${{ steps.results.outputs.failed }}
+      skipped: ${{ steps.results.outputs.skipped }}
+      flaky: ${{ steps.results.outputs.flaky }}
+      pieUrl: ${{ steps.results.outputs.pieUrl }}
+      passPercentage: ${{ steps.results.outputs.passPercentage }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install jq + bc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq bc
+
+      - name: Download blob reports
+        uses: actions/download-artifact@v4
+        with:
+          path: merged-blobs
+          pattern: blob-*
+          merge-multiple: true
+
+      - name: Merge HTML Report
+        run: npx playwright merge-reports --reporter html merged-blobs
+
+      - name: Download pie.json reports
+        uses: actions/download-artifact@v4
+        with:
+          path: pie-reports
+          pattern: pie-*
+          merge-multiple: false
+
+      - name: Merge pie.json
+        run: node scripts/merge-pie-json.js pie-reports
+
+      - name: Upload Final HTML Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-report
+          path: playwright-report
+
+      - name: Parse Results
+        id: results
+        run: |
+          file="playwright-report/pie.json"
+          if [ ! -f "$file" ]; then
+            echo "passed=0" >> $GITHUB_OUTPUT
+            echo "failed=0" >> $GITHUB_OUTPUT
+            echo "skipped=0" >> $GITHUB_OUTPUT
+            echo "flaky=0" >> $GITHUB_OUTPUT
+            echo "pieUrl=" >> $GITHUB_OUTPUT
+            echo "passPercentage=0" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          passed=$(jq -r '.passed' $file)
+          failed=$(jq -r '.failed' $file)
+          skipped=$(jq -r '.skipped' $file)
+          flaky=$(jq -r '.flaky' $file)
+          url=$(jq -r '.pieUrl' $file)
+          total=$((passed+failed+skipped+flaky))
+          [ "$total" -gt 0 ] && pct=$((passed*100/total)) || pct=0
+
+          echo "passed=$passed" >> $GITHUB_OUTPUT
+          echo "failed=$failed" >> $GITHUB_OUTPUT
+          echo "skipped=$skipped" >> $GITHUB_OUTPUT
+          echo "flaky=$flaky" >> $GITHUB_OUTPUT
+          echo "pieUrl=$url" >> $GITHUB_OUTPUT
+          echo "passPercentage=$pct" >> $GITHUB_OUTPUT
+  
   deploy-report:
     name: Publish HTML Report and Notify Teams
     needs: [merge-reports, start-timer]
