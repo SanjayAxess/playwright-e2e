@@ -1,0 +1,27 @@
+name: Run Tests - STAGING
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - PGT1-3077
+  repository_dispatch:
+    types:
+      - trigger-tests-stg
+  schedule:
+    - cron: "0 18 * * *"
+
+jobs:
+  call-template:
+    uses: ./.github/workflows/automation-template.yml
+    with:
+      env_name: "STAGING"
+      url: "https://staging-home.integrate.com/"
+      buyer_username: "qa-buyer-automation-staging@integrateteam.com"
+      mongo_db: "neo_staging"
+    secrets:
+      buyer_password: ${{ secrets.BUYER_PASSWORD_STG }}
+      org_id: ${{ secrets.ORG_ID_STG }}
+      mongo_uri: ${{ secrets.MONGO_URI_STG }}
+      teams_webhook_url: ${{ secrets.TEAMS_WEBHOOK_STG }}
+      nexus_npm_token: ${{ secrets.NEXUS_NPM_TOKEN }}
