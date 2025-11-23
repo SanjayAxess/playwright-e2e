@@ -1,0 +1,492 @@
+{
+    "data": [
+        {
+            "type": "medications",
+            "id": "a969699f-e07d-431e-a43d-c0cc912f0511",
+            "attributes": {
+                "drugRecordId": 353741,
+                "preparationCodeId": "87041000033110",
+                "preparationName": "Aspirin 75mg tablets",
+                "dosage": "No.of issues less than No. of Authorised issues",
+                "courseDurationInDays": 7,
+                "quantity": 23.000,
+                "quantityUnit": "tablet",
+                "quantityRepresentation": "23 tablet",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-05-23T12:47:11.383",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "7560e298-4712-4245-87ca-f06c0c12e5ae",
+                "endorsements": null,
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": "Rejected",
+                "latestWorkflowTaskType": "Repeat Requests\tCompleted",
+                "prescriptionRequestedDate": {
+                    "precision": "YMDT",
+                    "value": "2024-04-30T14:11:18.713"
+                },
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2024-04-30T00:00:00",
+                "authorisedCourseDate": "2024-04-30T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "effdd38f-c53a-4890-8a90-fa6540bce360",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "87041000033110"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "96d4b0c5-dd4a-41cd-983c-db913331a1d2"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "6bd599c2-1cd4-4d90-8fe0-39ec8a03c9bf",
+            "attributes": {
+                "drugRecordId": 353743,
+                "preparationCodeId": "1038041000033115",
+                "preparationName": "Paracetamol 120mg/5ml oral suspension paediatric",
+                "dosage": "Two 5ml Spoonfuls Every 4 To 6 Hours When Necessary. No More Than 4 Doses In 24 Hours",
+                "courseDurationInDays": 28,
+                "quantity": 1.000,
+                "quantityUnit": "ml",
+                "quantityRepresentation": "1 ml",
+                "prescriptionType": "Acute",
+                "lastIssueDate": null,
+                "reviewDate": null,
+                "noOfIssues": 0,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": null,
+                "mostRecentIssueMethodId": 0,
+                "mostRecentIssueRecordGuid": null,
+                "endorsements": null,
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": "Requested",
+                "latestWorkflowTaskType": "Repeat Requests with queries",
+                "prescriptionRequestedDate": {
+                    "precision": "YMDT",
+                    "value": "2024-04-30T14:24:28.14"
+                },
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2024-04-30T00:00:00",
+                "authorisedCourseDate": "2024-04-30T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": null,
+                "prescriptionGuid": null,
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "1038041000033115"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": null
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "c856105c-616c-4840-abda-dbd32ddd9d2b",
+            "attributes": {
+                "drugRecordId": 391970,
+                "preparationCodeId": "1038041000033115",
+                "preparationName": "Paracetamol 120mg/5ml oral suspension paediatric",
+                "dosage": "Two 5ml Spoonfuls Every 4 To 6 Hours When Necessary.  No More Than 4 Doses In 24 Hours",
+                "courseDurationInDays": 28,
+                "quantity": 1.000,
+                "quantityUnit": "ml",
+                "quantityRepresentation": "1 ml",
+                "prescriptionType": "Acute",
+                "lastIssueDate": null,
+                "reviewDate": null,
+                "noOfIssues": 0,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": "",
+                "patientInfo": "",
+                "mostRecentIssueMethod": null,
+                "mostRecentIssueMethodId": 0,
+                "mostRecentIssueRecordGuid": null,
+                "endorsements": null,
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2024-06-13T00:00:00",
+                "authorisedCourseDate": "2024-06-13T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": null,
+                "prescriptionGuid": null,
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "1038041000033115"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "003d8b23-2088-4ab5-94ef-e5ee9cc71e28"
+                    }
+                },
+                "signingUser": {
+                    "data": null
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "4d8b43af-62e9-4877-86df-b95409235e46",
+            "attributes": {
+                "drugRecordId": 443305,
+                "preparationCodeId": "878641000033113",
+                "preparationName": "Methylprednisolone acetate 40mg/1ml suspension for injection vials",
+                "dosage": "LovelaceRequest",
+                "courseDurationInDays": 0,
+                "quantity": 470556.000,
+                "quantityUnit": "vial",
+                "quantityRepresentation": "470556 vial",
+                "prescriptionType": "Repeat",
+                "lastIssueDate": null,
+                "reviewDate": "2025-02-12T00:00:00",
+                "noOfIssues": 0,
+                "noOfAuthorisedIssues": 1,
+                "pharmacyInfo": "b",
+                "patientInfo": "c",
+                "mostRecentIssueMethod": null,
+                "mostRecentIssueMethodId": 0,
+                "mostRecentIssueRecordGuid": null,
+                "endorsements": null,
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": "0 of 1",
+                "effectiveDate": "2024-07-03T00:00:00",
+                "authorisedCourseDate": "2024-07-03T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": null,
+                "prescriptionGuid": null,
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "878641000033113"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "d15a8f16-5961-4357-ae71-98fdbbf46aee"
+                    }
+                },
+                "signingUser": {
+                    "data": null
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "3731c004-26e6-4624-a07d-188a6f905dfa",
+            "attributes": {
+                "drugRecordId": 443306,
+                "preparationCodeId": "878641000033113",
+                "preparationName": "Methylprednisolone acetate 40mg/1ml suspension for injection vials",
+                "dosage": "LovelaceRequest",
+                "courseDurationInDays": 0,
+                "quantity": 911314.000,
+                "quantityUnit": "vial",
+                "quantityRepresentation": "911314 vial",
+                "prescriptionType": "Repeat",
+                "lastIssueDate": null,
+                "reviewDate": "2025-02-12T00:00:00",
+                "noOfIssues": 0,
+                "noOfAuthorisedIssues": 1,
+                "pharmacyInfo": "b",
+                "patientInfo": "c",
+                "mostRecentIssueMethod": null,
+                "mostRecentIssueMethodId": 0,
+                "mostRecentIssueRecordGuid": null,
+                "endorsements": null,
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": "0 of 1",
+                "effectiveDate": "2024-07-03T00:00:00",
+                "authorisedCourseDate": "2024-07-03T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": null,
+                "prescriptionGuid": null,
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "878641000033113"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "d15a8f16-5961-4357-ae71-98fdbbf46aee"
+                    }
+                },
+                "signingUser": {
+                    "data": null
+                }
+            }
+        }
+    ],
+    "links": {
+        "first": "http://api.meds.int.emishealthsolutions.com/persons/7097382F-C4FA-4F29-8CA9-24677214AA45/medications?page[size]=50\u0026page[number]=1\u0026include=authorisedUser,signingUser,preparation\u0026filter=equals(status,\u0027Current\u0027)\u0026group=PrescriptionType\u0026sort=DrugName"
+    },
+    "included": [
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "87041000033110",
+            "attributes": {
+                "isControlledDrug": false,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "No Controlled Drug Status",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 428673006,
+                    "dmdTerm": "tablet",
+                    "unitOfMeasurement": "tablet",
+                    "plural": "tablets",
+                    "uomId": 120
+                },
+                "defaultPack": {
+                    "term": "28 tablet",
+                    "packPrice": 0.72,
+                    "supplier": "Drug Tariff England/Wales",
+                    "unitsPerPack": 28,
+                    "unitOfMeasurementId": 120,
+                    "unitOfMeasurement": "tablet",
+                    "unitOfMeasurementPlural": "tablets"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "42292011000001108",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "1038041000033115",
+            "attributes": {
+                "isControlledDrug": false,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "No Controlled Drug Status",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 258773002,
+                    "dmdTerm": "ml",
+                    "unitOfMeasurement": "ml",
+                    "plural": "ml",
+                    "uomId": 81
+                },
+                "defaultPack": {
+                    "term": "100 ml",
+                    "packPrice": 3.69,
+                    "supplier": "Rosemont Pharmaceuticals Ltd",
+                    "unitsPerPack": 100,
+                    "unitOfMeasurementId": 81,
+                    "unitOfMeasurement": "ml",
+                    "unitOfMeasurementPlural": "ml"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftCommunityNurse",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "42108411000001103",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "878641000033113",
+            "attributes": {
+                "isControlledDrug": false,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "No Controlled Drug Status",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 415818006,
+                    "dmdTerm": "vial",
+                    "unitOfMeasurement": "vial",
+                    "plural": "vials",
+                    "uomId": 130
+                },
+                "defaultPack": {
+                    "term": "1 vial",
+                    "packPrice": 3.44,
+                    "supplier": "Drug Tariff England/Wales",
+                    "unitsPerPack": 1,
+                    "unitOfMeasurementId": 130,
+                    "unitOfMeasurement": "vial",
+                    "unitOfMeasurementPlural": "vials"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "36034711000001101",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "user",
+            "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97",
+            "attributes": {
+                "displayName": "TEST, Emis (Dr)",
+                "forenames": "Emis",
+                "surname": "Test",
+                "title": "Dr",
+                "userERN": "ern:emis:user:user:b4b113c2-aa76-4259-a3bd-f76592b89518",
+                "organisationGuid": "d5753427-76ec-48e8-ab19-7f3308d5ca3d",
+                "emailAddress": "teamlovelace@emishealth.com"
+            }
+        },
+        {
+            "type": "user",
+            "id": "003d8b23-2088-4ab5-94ef-e5ee9cc71e28",
+            "attributes": {
+                "displayName": "TEAM, Lovelace (Dr)",
+                "forenames": "Lovelace",
+                "surname": "Team",
+                "title": "Dr",
+                "userERN": "ern:emis:user:user:b4b113c2-aa76-4259-a3bd-f76592b89518",
+                "organisationGuid": "d5753427-76ec-48e8-ab19-7f3308d5ca3d",
+                "emailAddress": null
+            }
+        },
+        {
+            "type": "user",
+            "id": "d15a8f16-5961-4357-ae71-98fdbbf46aee",
+            "attributes": {
+                "displayName": "PORTEOUS, Josh (Mr)",
+                "forenames": "Josh",
+                "surname": "Porteous",
+                "title": "Mr",
+                "userERN": "ern:emis:user:user:61d9fde7-d3b8-4c12-965e-1fdfc6df4b0e",
+                "organisationGuid": "d5753427-76ec-48e8-ab19-7f3308d5ca3d",
+                "emailAddress": "TeamFaraday@emishealth.com"
+            }
+        },
+        {
+            "type": "user",
+            "id": "96d4b0c5-dd4a-41cd-983c-db913331a1d2",
+            "attributes": {
+                "displayName": "RAJENDIRAN, Lakshmipathi (Mr)",
+                "forenames": "Lakshmipathi",
+                "surname": "Rajendiran",
+                "title": "Mr",
+                "userERN": "ern:emis:user:user:5d6fba2e-6b1e-48df-a783-77ff6b0e1c0c",
+                "organisationGuid": "d5753427-76ec-48e8-ab19-7f3308d5ca3d",
+                "emailAddress": "lakshmipathi.r@emishealth.com"
+            }
+        }
+    ]
+}

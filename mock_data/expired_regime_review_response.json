@@ -1,0 +1,20 @@
+{
+    "data": {
+        "type": "regime-review",
+        "id": "0412cd1b-280a-4efd-86f2-c86aae0291c7",
+        "attributes": {
+            "regimeReviewDate": "2025-05-16T00:00:00"
+        },
+        "relationships": {
+            "followup-consultation-section": {
+                "data": null
+            },
+            "regimereview-consultation-section": {
+                "data": null
+            },
+            "code": {
+                "data": null
+            }
+        }
+    }
+}

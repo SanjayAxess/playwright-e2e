@@ -1,0 +1,1230 @@
+{
+    "data": [
+        {
+            "type": "medications",
+            "id": "cfa342fa-246e-40ab-9b13-06e24ac729b9",
+            "attributes": {
+                "drugRecordId": 636165,
+                "preparationCodeId": "4555441000033110",
+                "preparationName": "*Aurum/Prunus Pills",
+                "dosage": "once per week",
+                "courseDurationInDays": 28,
+                "quantity": 20.000,
+                "quantityUnit": "gram",
+                "quantityRepresentation": "20 gram",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-06-05T10:14:33.93",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "8769e3ff-a976-4ad8-94b5-ca5911ae0751",
+                "endorsements": null,
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "cc81a6b2-b214-4d1b-a522-27b97b541eaf",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "4555441000033110"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "19bb3e30-5a26-4247-af01-ca0047785ba3",
+            "attributes": {
+                "drugRecordId": 636156,
+                "preparationCodeId": "91941000033117",
+                "preparationName": "Atorvastatin 10mg tablets",
+                "dosage": "One To Be Taken Each Day",
+                "courseDurationInDays": 22,
+                "quantity": 22.000,
+                "quantityUnit": "tablet",
+                "quantityRepresentation": "22 tablet",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-06-05T09:59:37.233",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Private Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "a84de6b3-cc03-430e-8ecc-18a707ef9ea0",
+                "endorsements": [
+                    "Private"
+                ],
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "c6e57b13-9316-487b-a6bf-7e8fd23072b6",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "91941000033117"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "2b7c8e26-cded-4c57-8886-ab8fd0d1d671",
+            "attributes": {
+                "drugRecordId": 636157,
+                "preparationCodeId": "92041000033111",
+                "preparationName": "Atorvastatin 20mg tablets",
+                "dosage": "One To Be Taken Each Day",
+                "courseDurationInDays": 22,
+                "quantity": 22.000,
+                "quantityUnit": "tablet",
+                "quantityRepresentation": "22 tablet",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-06-05T10:00:38.92",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Private Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "535e40b2-f41d-4be8-b9d6-55516d68dcb9",
+                "endorsements": [
+                    "Private",
+                    "Personally administered"
+                ],
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": true,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "375e7d2e-5045-4b13-85e2-d2e7d86f7598",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "92041000033111"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "e8fb33b4-8caa-4c7b-8fd3-e0e0efb65281",
+            "attributes": {
+                "drugRecordId": 636158,
+                "preparationCodeId": "262841000033110",
+                "preparationName": "Clobazam 10mg tablets",
+                "dosage": "Two To Be Taken Each Day",
+                "courseDurationInDays": 5,
+                "quantity": 10.000,
+                "quantityUnit": "tablet",
+                "quantityRepresentation": "10 tablet",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-06-05T10:02:53.863",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "70594fd4-4723-427b-afb7-94f270ff5f93",
+                "endorsements": [
+                    "SLS"
+                ],
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "6e29ccc4-5de5-4856-99ff-7e110165431e",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "262841000033110"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "7a751f66-51a8-40a1-a26b-10bb9687681a",
+            "attributes": {
+                "drugRecordId": 636159,
+                "preparationCodeId": "2261641000033115",
+                "preparationName": "Co-cyprindiol 2000microgram/35microgram tablets",
+                "dosage": "As Directed",
+                "courseDurationInDays": 28,
+                "quantity": 14.000,
+                "quantityUnit": "tablet",
+                "quantityRepresentation": "14 tablet",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-06-05T10:04:06.293",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "8b4416f1-59ec-4ed9-9691-79e4b3b92010",
+                "endorsements": [
+                    "Contraceptive"
+                ],
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "18d1afb8-d66c-4817-bdc2-319814b9699c",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "2261641000033115"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "c5dbcc29-f817-4884-b072-a7a6c7ef7b1a",
+            "attributes": {
+                "drugRecordId": 636161,
+                "preparationCodeId": "466241000033114",
+                "preparationName": "Diamorphine 10mg tablets",
+                "dosage": "Test",
+                "courseDurationInDays": 1,
+                "quantity": 1.000,
+                "quantityUnit": "tablet",
+                "quantityRepresentation": "1 tablet",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-06-05T10:06:59.923",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "8bd1de1a-a6c3-4ab2-bc15-6f7cade0a76d",
+                "endorsements": [
+                    "Prescribed for STI"
+                ],
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "588b97ca-3170-43ec-b0cf-d7cf7c1839f1",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "466241000033114"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "04237019-840b-4655-820b-ee4e81a54418",
+            "attributes": {
+                "drugRecordId": 636154,
+                "preparationCodeId": "466241000033114",
+                "preparationName": "Diamorphine 10mg tablets",
+                "dosage": "FP10PCD Automatic",
+                "courseDurationInDays": 3,
+                "quantity": 3.000,
+                "quantityUnit": "tablet",
+                "quantityRepresentation": "3 tablet",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-06-05T09:55:51.893",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "1efd0fd6-130d-4d73-ab0e-06fc6e0cbf89",
+                "endorsements": [
+                    "FP10 PCD"
+                ],
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "07d20ca3-3400-4561-81b1-bd8033d4b397",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "466241000033114"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "b55613a2-88c2-47b7-8445-68e7841a4b62",
+            "attributes": {
+                "drugRecordId": 636167,
+                "preparationCodeId": "6002841000033118",
+                "preparationName": "Estradiol 10microgram pessaries",
+                "dosage": "One To Be Inserted At Bedtime",
+                "courseDurationInDays": 2,
+                "quantity": 2.000,
+                "quantityUnit": "pessary",
+                "quantityRepresentation": "2 pessary",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-06-05T10:18:57.777",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "1b89ce49-b247-4618-98e9-4298f6a0730c",
+                "endorsements": null,
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "aa851704-3768-4c68-8351-c230f0ee1601",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "6002841000033118"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "13f6bfb2-5f94-4dd4-9b92-ccae5a2b41d2",
+            "attributes": {
+                "drugRecordId": 636160,
+                "preparationCodeId": "11492241000033112",
+                "preparationName": "Fortisip 2kcal liquid (Flavour Not Specified)",
+                "dosage": "test assorted flavors",
+                "courseDurationInDays": 80,
+                "quantity": 1200.000,
+                "quantityUnit": "ml",
+                "quantityRepresentation": "6 x 200 ml",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-06-05T10:05:09.94",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "baab8337-4ba2-45f3-91fb-948a4d2104df",
+                "endorsements": [
+                    "Assorted flavours"
+                ],
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "f80de843-2363-419b-bc85-93685fa91359",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "11492241000033112"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "57e56775-d57e-431e-a423-a61784a74995",
+            "attributes": {
+                "drugRecordId": 636164,
+                "preparationCodeId": "888541000033115",
+                "preparationName": "Methadone 1mg/ml oral solution",
+                "dosage": "As Directed",
+                "courseDurationInDays": 1,
+                "quantity": 1.000,
+                "quantityUnit": "ml",
+                "quantityRepresentation": "1 ml",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-06-05T10:12:30.93",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "b0e44e02-faf8-4a59-aafe-56cf67ada7cb",
+                "endorsements": [
+                    "Instalment prescribed"
+                ],
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "a7bedd00-9168-45f1-874d-9e58769b2387",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "888541000033115"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "05ee6f90-a289-4b33-bb72-33d4e5921066",
+            "attributes": {
+                "drugRecordId": 636162,
+                "preparationCodeId": "2637441000033119",
+                "preparationName": "Prednisolone acetate 1% eye drops",
+                "dosage": "Apply Every One To Two Hours Until Controlled Then Reduce Frequency",
+                "courseDurationInDays": 7,
+                "quantity": 40.000,
+                "quantityUnit": "ml",
+                "quantityRepresentation": "40 ml",
+                "prescriptionType": "Acute",
+                "lastIssueDate": "2025-06-05T10:08:10.07",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": null,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "b19d69bc-4a26-4986-93c2-b9fdabc8f6c8",
+                "endorsements": [
+                    "Personally administered"
+                ],
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": null,
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": true,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Acute",
+                "prescriptionGuid": "7a38f504-3308-42f9-8799-62122bea3204",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "2637441000033119"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        },
+        {
+            "type": "medications",
+            "id": "1880a391-7a26-441f-a5e0-a36cfe249d3d",
+            "attributes": {
+                "drugRecordId": 636163,
+                "preparationCodeId": "810141000033112",
+                "preparationName": "Latanoprost 50micrograms/ml eye drops",
+                "dosage": "One Drop To Be Used At Night In The Affected Eye(s)",
+                "courseDurationInDays": 5,
+                "quantity": 10.000,
+                "quantityUnit": "ml",
+                "quantityRepresentation": "10 ml",
+                "prescriptionType": "Repeat",
+                "lastIssueDate": "2025-06-05T10:11:11.787",
+                "reviewDate": null,
+                "noOfIssues": 1,
+                "noOfAuthorisedIssues": 5,
+                "pharmacyInfo": null,
+                "patientInfo": null,
+                "mostRecentIssueMethod": "Print (Stored)",
+                "mostRecentIssueMethodId": 1,
+                "mostRecentIssueRecordGuid": "eb927e07-cac0-41b2-935b-e7a6f243d9ec",
+                "endorsements": [
+                    "Variable Use"
+                ],
+                "onlineAccessRestricted": false,
+                "prescriptionRequestStatus": null,
+                "latestWorkflowTaskType": null,
+                "prescriptionRequestedDate": null,
+                "status": "current",
+                "isUpdated": false,
+                "stoppedDate": null,
+                "stoppedReason": null,
+                "lastIssueNumber": "1 of 5",
+                "effectiveDate": "2025-06-05T00:00:00",
+                "authorisedCourseDate": "2025-06-05T00:00:00",
+                "minNextIssueDays": null,
+                "maxNextIssueDays": null,
+                "isPersonallyAdministered": false,
+                "localMixtureId": null,
+                "mostRecentIssuedPrescriptionType": "Repeat",
+                "prescriptionGuid": "a83e7756-fd6e-4454-bde3-26fb6d165396",
+                "lastIssueCancellationStatusId": null,
+                "lastIssueCancellationResponseId": null,
+                "performerOrganisationId": null
+            },
+            "relationships": {
+                "preparation": {
+                    "data": {
+                        "type": "ern:emis:term:preparation",
+                        "id": "810141000033112"
+                    }
+                },
+                "authorisedUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                },
+                "signingUser": {
+                    "data": {
+                        "type": "user",
+                        "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97"
+                    }
+                }
+            }
+        }
+    ],
+    "links": {
+        "first": "http://api.meds.int.emishealthsolutions.com/persons/fe1d4236-4511-4da6-bdeb-2310091ee033/medications?page[size]=50\u0026page[number]=1\u0026include=authorisedUser,signingUser,preparation\u0026filter=equals(status,\u0027Current\u0027)\u0026group=PrescriptionType\u0026sort=DrugName"
+    },
+    "included": [
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "4555441000033110",
+            "attributes": {
+                "isControlledDrug": false,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": false,
+                "controlledDrugSchedule": "No Controlled Drug Status",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 258682000,
+                    "dmdTerm": "gram",
+                    "unitOfMeasurement": "gram",
+                    "plural": "grams",
+                    "uomId": 36
+                },
+                "defaultPack": {
+                    "term": "7 gram",
+                    "packPrice": 0,
+                    "supplier": "Special Order",
+                    "unitsPerPack": 7,
+                    "unitOfMeasurementId": 36,
+                    "unitOfMeasurement": "gram",
+                    "unitOfMeasurementPlural": "grams"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "0",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "91941000033117",
+            "attributes": {
+                "isControlledDrug": false,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "No Controlled Drug Status",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 428673006,
+                    "dmdTerm": "tablet",
+                    "unitOfMeasurement": "tablet",
+                    "plural": "tablets",
+                    "uomId": 120
+                },
+                "defaultPack": {
+                    "term": "28 tablet",
+                    "packPrice": 0.68,
+                    "supplier": "Drug Tariff England/Wales",
+                    "unitsPerPack": 28,
+                    "unitOfMeasurementId": 120,
+                    "unitOfMeasurement": "tablet",
+                    "unitOfMeasurementPlural": "tablets"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "39695411000001103",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "92041000033111",
+            "attributes": {
+                "isControlledDrug": false,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "No Controlled Drug Status",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 428673006,
+                    "dmdTerm": "tablet",
+                    "unitOfMeasurement": "tablet",
+                    "plural": "tablets",
+                    "uomId": 120
+                },
+                "defaultPack": {
+                    "term": "28 tablet",
+                    "packPrice": 0.74,
+                    "supplier": "Drug Tariff England/Wales",
+                    "unitsPerPack": 28,
+                    "unitOfMeasurementId": 120,
+                    "unitOfMeasurement": "tablet",
+                    "unitOfMeasurementPlural": "tablets"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "39733011000001106",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "262841000033110",
+            "attributes": {
+                "isControlledDrug": true,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "Controlled Drug-Schedule 4",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 428673006,
+                    "dmdTerm": "tablet",
+                    "unitOfMeasurement": "tablet",
+                    "plural": "tablets",
+                    "uomId": 120
+                },
+                "defaultPack": {
+                    "term": "30 tablet",
+                    "packPrice": 4.03,
+                    "supplier": "Drug Tariff England/Wales",
+                    "unitsPerPack": 30,
+                    "unitOfMeasurementId": 120,
+                    "unitOfMeasurement": "tablet",
+                    "unitOfMeasurementPlural": "tablets"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "42127011000001103",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "2261641000033115",
+            "attributes": {
+                "isControlledDrug": false,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "No Controlled Drug Status",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 428673006,
+                    "dmdTerm": "tablet",
+                    "unitOfMeasurement": "tablet",
+                    "plural": "tablets",
+                    "uomId": 120
+                },
+                "defaultPack": {
+                    "term": "63 tablet",
+                    "packPrice": 10.7,
+                    "supplier": "Drug Tariff England/Wales",
+                    "unitsPerPack": 63,
+                    "unitOfMeasurementId": 120,
+                    "unitOfMeasurement": "tablet",
+                    "unitOfMeasurementPlural": "tablets"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "41872911000001109",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "466241000033114",
+            "attributes": {
+                "isControlledDrug": true,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "Controlled Drug-Schedule 2",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 428673006,
+                    "dmdTerm": "tablet",
+                    "unitOfMeasurement": "tablet",
+                    "plural": "tablets",
+                    "uomId": 120
+                },
+                "defaultPack": {
+                    "term": "100 tablet",
+                    "packPrice": 37.13,
+                    "supplier": "Alliance Healthcare (Distribution) Ltd",
+                    "unitsPerPack": 100,
+                    "unitOfMeasurementId": 120,
+                    "unitOfMeasurement": "tablet",
+                    "unitOfMeasurementPlural": "tablets"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "42011411000001101",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "6002841000033118",
+            "attributes": {
+                "isControlledDrug": false,
+                "isHRT": true,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "No Controlled Drug Status",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 733007009,
+                    "dmdTerm": "pessary",
+                    "unitOfMeasurement": "pessary",
+                    "plural": "pessaries",
+                    "uomId": 102
+                },
+                "defaultPack": {
+                    "term": "24 pessary",
+                    "packPrice": 9.87,
+                    "supplier": "Drug Tariff England/Wales",
+                    "unitsPerPack": 24,
+                    "unitOfMeasurementId": 102,
+                    "unitOfMeasurement": "pessary",
+                    "unitOfMeasurementPlural": "pessaries"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "18109911000001108",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "11492241000033112",
+            "attributes": {
+                "isControlledDrug": false,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "No Controlled Drug Status",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 258773002,
+                    "dmdTerm": "ml",
+                    "unitOfMeasurement": "ml",
+                    "plural": "ml",
+                    "uomId": 81
+                },
+                "defaultPack": {
+                    "term": "200 ml",
+                    "packPrice": 0,
+                    "supplier": "Nutricia Ltd",
+                    "unitsPerPack": 200,
+                    "unitOfMeasurementId": 81,
+                    "unitOfMeasurement": "ml",
+                    "unitOfMeasurementPlural": "ml"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "32478711000001101",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "888541000033115",
+            "attributes": {
+                "isControlledDrug": true,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "Controlled Drug-Schedule 2",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 258773002,
+                    "dmdTerm": "ml",
+                    "unitOfMeasurement": "ml",
+                    "plural": "ml",
+                    "uomId": 81
+                },
+                "defaultPack": {
+                    "term": "100 ml",
+                    "packPrice": 0.88,
+                    "supplier": "Drug Tariff England/Wales",
+                    "unitsPerPack": 100,
+                    "unitOfMeasurementId": 81,
+                    "unitOfMeasurement": "ml",
+                    "unitOfMeasurementPlural": "ml"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "36120711000001104",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "2637441000033119",
+            "attributes": {
+                "isControlledDrug": false,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "No Controlled Drug Status",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 258773002,
+                    "dmdTerm": "ml",
+                    "unitOfMeasurement": "ml",
+                    "plural": "ml",
+                    "uomId": 81
+                },
+                "defaultPack": {
+                    "term": "5 ml",
+                    "packPrice": 1.82,
+                    "supplier": "Drug Tariff England/Wales",
+                    "unitsPerPack": 5,
+                    "unitOfMeasurementId": 81,
+                    "unitOfMeasurement": "ml",
+                    "unitOfMeasurementPlural": "ml"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "42195311000001103",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "ern:emis:term:preparation",
+            "id": "810141000033112",
+            "attributes": {
+                "isControlledDrug": false,
+                "isHRT": false,
+                "isWithdrawn": false,
+                "isDmdMapped": true,
+                "controlledDrugSchedule": "No Controlled Drug Status",
+                "isBlackTriangle": false,
+                "defaultUnit": {
+                    "dmdId": 258773002,
+                    "dmdTerm": "ml",
+                    "unitOfMeasurement": "ml",
+                    "plural": "ml",
+                    "uomId": 81
+                },
+                "defaultPack": {
+                    "term": "2.5 ml",
+                    "packPrice": 1.36,
+                    "supplier": "Drug Tariff England/Wales",
+                    "unitsPerPack": 2.5,
+                    "unitOfMeasurementId": 81,
+                    "unitOfMeasurement": "ml",
+                    "unitOfMeasurementPlural": "ml"
+                },
+                "nonDivisibleUnitOfMeasure": null,
+                "isNonDivisible": false,
+                "formularyTypes": [
+                    "ftDoctor",
+                    "ftIndependantNurse",
+                    "ftPharmacy"
+                ],
+                "dmdId": "42192211000001101",
+                "isAppliance": false
+            }
+        },
+        {
+            "type": "user",
+            "id": "f26199bf-28ef-4b24-b4ce-c4c71de84d97",
+            "attributes": {
+                "displayName": "TEST, Emis (Dr)",
+                "forenames": "Emis",
+                "surname": "Test",
+                "title": "Dr",
+                "userERN": "ern:emis:user:user:b4b113c2-aa76-4259-a3bd-f76592b89518",
+                "organisationGuid": "d5753427-76ec-48e8-ab19-7f3308d5ca3d",
+                "emailAddress": "teamlovelace@emishealth.com"
+            }
+        }
+    ]
+}

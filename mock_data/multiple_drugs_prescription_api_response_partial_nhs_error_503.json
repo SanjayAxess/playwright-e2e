@@ -1,0 +1,100 @@
+{
+    "data": {
+        "id": "ca595553-e26d-423e-b6cf-ba65291b88df",
+        "type": "issuePrescriptionBatch",
+        "attributes": {
+            "epsResponse": {
+                "prescriptions": [
+                    {
+                        "uuid": "76975d0e-2169-4582-ae6f-bddd2a37f80d",
+                        "spineRequestContent": "test-spine-request-content0",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "uuid": "4620fe08-7889-4820-b215-598fcd145b0d",
+                        "spineRequestContent": "test-spine-request-content1",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        },
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "503",
+                                "title": "Error",
+                                "detail": "The NHS API is currently unavailable. Please try again later."
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "61d9a294-436d-4b8d-9dfb-6f1f15d0cd08",
+                        "spineRequestContent": "test-spine-request-content2",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        },
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "503",
+                                "title": "Error",
+                                "detail": "The NHS API is currently unavailable. Please try again later."
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "60ce7ce9-2991-4516-9eb2-1ab19f980d22",
+                        "spineRequestContent": "test-spine-request-content3",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        },
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "503",
+                                "title": "Error",
+                                "detail": "The NHS API is currently unavailable. Please try again later."
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

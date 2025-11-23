@@ -1,0 +1,120 @@
+{
+    "data": {
+        "id": "ca595553-e26d-423e-b6cf-ba65291b88df",
+        "type": "issuePrescriptionBatch",
+        "attributes": {
+            "epsResponse": {
+                "prescriptions": [
+                    {
+                        "uuid": "7dbd0f5b-040c-47aa-88da-639459849cc4",
+                        "spineRequestContent": "test-spine-request-content0",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        },
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "67eba95b-a1e2-4c0f-869b-e264e3374718",
+                        "spineRequestContent": "test-spine-request-content1",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        },
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a3af706b-5515-48ae-9482-6a0a18442a79",
+                        "spineRequestContent": "test-spine-request-content2",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        },
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "8b8e2aa8-a861-453c-a350-d381ab3fccc7",
+                        "spineRequestContent": "test-spine-request-content3",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        },
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@emisgroup/medication-e2e",
+  "version": "1.0.0",
+  "description": "Feature tests",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "test": "npx cross-env PW_TEST_HTML_REPORT_OPEN='never' npx npm-run-all test:*",
+    "test:standalone": "npx cross-env URL='' playwright test --project standalone",
+    "test:dev": "npx playwright test --project dev --headed",
+    "test:preview": "npx playwright test --project preview --headed",
+    "test:int": "npx playwright test --project int",
+    "test:int:headed": "npx playwright test --trace on --headed --project int",
+    "test:dev:headed": "npx playwright test --trace on --headed --project dev",
+    "test:stg:headed": "npx playwright test --trace on --headed --project stg",
+    "test:stg": "npx playwright test --project stg-test",
+    "test:local": "npx playwright test --project local",
+    "test:cis2-dev": "npx playwright test --project cis2-dev",
+    "test:cis2-int": "npx playwright test --project cis2-int",
+    "test:cis2-stg": "npx playwright test --project cis2-stg",
+    "test:cis2-int:headed": "npx playwright test --trace on --headed --project cis2-int",
+    "allure-report": "npx allure generate ./allure-results --clean --single-file -o ./allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@emisgroup/xgp-playwright-boilerplate": "^1.0.0",
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^20.17.12",
+    "@types/pixelmatch": "^5.2.6",
+    "@types/pngjs": "^6.0.5",
+    "pixelmatch": "^7.1.0"
+  },
+  "dependencies": {
+    "pngjs": "^7.0.0",
+    "uuid": "^11.1.0"
+  }
+}

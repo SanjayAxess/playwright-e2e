@@ -1,0 +1,28 @@
+{
+    "data": {
+        "id": "ca595553-e26d-423e-b6cf-ba65291b88df",
+        "type": "issuePrescriptionBatch",
+        "attributes": {
+            "epsResponse": {
+                "prescriptions": [
+                    {
+                        "uuid": "04fd017d-1904-4c8f-9629-e4665b6113c0",
+                        "spineRequestContent": "test-spine-request-content0",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

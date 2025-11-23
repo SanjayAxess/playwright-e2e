@@ -1,0 +1,75 @@
+{
+    "data": [
+        {
+            "type": "allergy",
+            "id": "a903da75-7d84-438b-8b8b-1812e96f64d4",
+            "attributes": {
+                "onlineAccessRestricted": false,
+                "provisional": false,
+                "isDegrade": true,
+                "qualifiers": [],
+                "authorisingUser": "TEST, Emis (Dr)",
+                "enteredByUser": "TEST, Emis (Dr)",
+                "originalTerm": "Awaiting clinical code migration to EMIS Web",
+                "effectiveDate": {
+                    "precision": "YMD",
+                    "value": "2024-10-30T00:00:00"
+                },
+                "isConfidential": false,
+                "complete": true,
+                "isProblemEpisode": false
+            },
+            "relationships": {
+                "children": {
+                    "data": []
+                },
+                "code": {
+                    "data": {
+                        "type": "ern:emis:term:code",
+                        "id": "1572871000006117"
+                    }
+                },
+                "consultation-section": {
+                    "data": null
+                }
+            }
+        },
+        {
+            "type": "allergy",
+            "id": "66f5ad60-ccbf-429e-b361-dd917e7eb379",
+            "attributes": {
+                "onlineAccessRestricted": false,
+                "provisional": false,
+                "isDegrade": true,
+                "qualifiers": [],
+                "authorisingUser": "TEST, Emis (Dr)",
+                "enteredByUser": "TEST, Emis (Dr)",
+                "originalTerm": "Transfer-degraded drug allergy",
+                "effectiveDate": {
+                    "precision": "YMD",
+                    "value": "2024-10-30T00:00:00"
+                },
+                "isConfidential": false,
+                "complete": true,
+                "isProblemEpisode": false
+            },
+            "relationships": {
+                "children": {
+                    "data": []
+                },
+                "code": {
+                    "data": {
+                        "type": "ern:emis:term:code",
+                        "id": "294801000000114"
+                    }
+                },
+                "consultation-section": {
+                    "data": null
+                }
+            }
+        }
+    ],
+    "links": {
+        "first": "http://api.cr.int.emishealthsolutions.com/persons/4c1f0800-73b7-4b92-8541-da4c89d397ab/allergies?sort=observationId\u0026page[size]=100\u0026page[number]=1"
+    }
+}

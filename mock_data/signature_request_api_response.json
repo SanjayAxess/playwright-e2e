@@ -1,0 +1,13 @@
+{
+    "data": {
+        "type": "signatureGenerationResponse",
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "attributes": {
+            "spineRequestContent": "sample-request-content",
+            "spineResponseContent": {
+                "token": "NmViYmVjNmYtYzVkMi00NTM4LTg3NjUtODhkOTI1Y2I4ZWZl",
+                "redirectUrl": "https://sandbox.api.service.nhs.uk/signing-service/client?token=NmViYmVjNmYtYzVkMi00NTM4LTg3NjUtODhkOTI1Y2I4ZWZl&mock=true"
+            }
+        }
+    }
+}

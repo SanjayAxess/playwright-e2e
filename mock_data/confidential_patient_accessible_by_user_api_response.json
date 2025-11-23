@@ -1,0 +1,120 @@
+{
+    "data": {
+        "type": "patients",
+        "id": "aa52a7f0-67a3-4e04-a702-130a72e4bc8a",
+        "attributes": {
+            "notes": "",
+            "dateOfRegistration": "2023-08-30",
+            "gender": "M",
+            "recordsAt": "",
+            "advocacyNeeds": "",
+            "transportNeeds": "",
+            "dispensingStatus": false,
+            "patientStatus": "Patient has presented",
+            "caseloadPatientStatus": "Registered",
+            "sensitive": false,
+            "restricted": false,
+            "name": {
+                "title": "Miss",
+                "givenName": "Confidential Patient",
+                "middleNames": "Ui Automation",
+                "surname": "Faraday",
+                "previousSurname": "",
+                "callingName": "Confidential"
+            },
+            "dateOfBirth": "2019-12-01",
+            "patientType": "Regular",
+            "identifiers": {
+                "patientId": 27340,
+                "patientNumber": 71
+            },
+            "confidentiality": "Doctor Only"
+        },
+        "relationships": {
+            "addresses": {
+                "data": [
+                    {
+                        "type": "addresses",
+                        "id": "abaf48fc-868e-4269-b9a9-525a3b9945ea_1"
+                    }
+                ]
+            },
+            "patientIdentifiers": {
+                "data": []
+            },
+            "patientContacts": {
+                "data": [
+                    {
+                        "type": "patient-contacts",
+                        "id": "Mobile Phone Number"
+                    }
+                ]
+            },
+            "usualGP": {
+                "data": {
+                    "type": "clinical-users",
+                    "id": "2a0b1498-d4ba-4839-9104-090981ddf58d"
+                }
+            },
+            "registeredGP": {
+                "data": {
+                    "type": "clinical-users",
+                    "id": "499ff23d-3239-4ad4-a199-4b0bd7984266"
+                }
+            },
+            "registeredOrganisation": {
+                "data": {
+                    "type": "organisations",
+                    "id": "d5753427-76ec-48e8-ab19-7f3308d5ca3d"
+                }
+            },
+            "location": {
+                "data": null
+            },
+            "person": {
+                "data": {
+                    "type": "persons",
+                    "id": "7767398d-57de-4d94-a18a-491ed86c675f"
+                }
+            }
+        }
+    },
+    "included": [
+        {
+            "type": "addresses",
+            "id": "abaf48fc-868e-4269-b9a9-525a3b9945ea_1",
+            "attributes": {
+                "locality": "",
+                "county": "",
+                "previousAddress": false,
+                "houseNameFlatNumber": "1234",
+                "numberAndStreet": "Abc 2345",
+                "town": "Test",
+                "postcode": "",
+                "primaryAddressType": "Primary Address"
+            }
+        },
+        {
+            "type": "clinical-users",
+            "id": "2a0b1498-d4ba-4839-9104-090981ddf58d",
+            "attributes": {
+                "title": "Dr",
+                "displayName": "TEST, Emis (Dr)",
+                "forenames": "Emis",
+                "surname": "Test",
+                "email": "teamlovelace@emishealth.com"
+            }
+        },
+        {
+            "type": "patient-contacts",
+            "id": "Mobile Phone Number",
+            "attributes": {
+                "contactType": "Mobile Phone Number",
+                "contactInformation": "456456456456"
+            }
+        }
+    ],
+    "meta": {
+        "dateRecorded": "2023-08-30T00:00:00"
+    }
+}

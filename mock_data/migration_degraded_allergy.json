@@ -1,0 +1,115 @@
+{
+    "data": [
+        {
+            "type": "allergy",
+            "id": "f53cbe37-04b9-4645-b7e1-979e8c6f980f",
+            "attributes": {
+                "onlineAccessRestricted": false,
+                "provisional": false,
+                "isDegrade": false,
+                "qualifiers": [],
+                "authorisingUser": "TEST, Emis (Dr)",
+                "enteredByUser": "TEST, Emis (Dr)",
+                "originalTerm": "Allergy to peanuts",
+                "effectiveDate": {
+                    "precision": "YMDT",
+                    "value": "2023-11-28T13:16:00"
+                },
+                "isConfidential": false,
+                "complete": true,
+                "isProblemEpisode": false
+            },
+            "relationships": {
+                "children": {
+                    "data": []
+                },
+                "code": {
+                    "data": {
+                        "type": "ern:emis:term:code",
+                        "id": "236761000006114"
+                    }
+                },
+                "consultation-section": {
+                    "data": {
+                        "type": "consultation-section",
+                        "id": "d12cfe46-53e0-4d27-a1ed-2b40d84a6339"
+                    }
+                }
+            }
+        },
+        {
+            "type": "allergy",
+            "id": "0db3c03b-134f-435c-9bf0-98520c62e7b0",
+            "attributes": {
+                "onlineAccessRestricted": false,
+                "provisional": false,
+                "isDegrade": false,
+                "qualifiers": [],
+                "authorisingUser": "TEST, Emis (Dr)",
+                "enteredByUser": "TEST, Emis (Dr)",
+                "originalTerm": "Adverse reaction to Doloxene Compound",
+                "effectiveDate": {
+                    "precision": "YMDT",
+                    "value": "2023-11-28T13:16:00"
+                },
+                "isConfidential": false,
+                "complete": true,
+                "isProblemEpisode": false
+            },
+            "relationships": {
+                "children": {
+                    "data": []
+                },
+                "code": {
+                    "data": {
+                        "type": "ern:emis:term:code",
+                        "id": "1062381000006116"
+                    }
+                },
+                "consultation-section": {
+                    "data": {
+                        "type": "consultation-section",
+                        "id": "3aec0d88-83ce-4dce-a329-849b5bfbd393"
+                    }
+                }
+            }
+        },
+        {
+            "type": "allergy",
+            "id": "390a08b4-cfb1-41d6-ad67-c1d3f73ae332",
+            "attributes": {
+                "onlineAccessRestricted": false,
+                "provisional": false,
+                "isDegrade": true,
+                "qualifiers": [],
+                "authorisingUser": "TEST, Emis (Dr)",
+                "enteredByUser": "TEST, Emis (Dr)",
+                "originalTerm": "Awaiting clinical code migration to EMIS Web",
+                "effectiveDate": {
+                    "precision": "YMD",
+                    "value": "2024-10-30T00:00:00"
+                },
+                "isConfidential": false,
+                "complete": true,
+                "isProblemEpisode": false
+            },
+            "relationships": {
+                "children": {
+                    "data": []
+                },
+                "code": {
+                    "data": {
+                        "type": "ern:emis:term:code",
+                        "id": "1572871000006117"
+                    }
+                },
+                "consultation-section": {
+                    "data": null
+                }
+            }
+        }
+    ],
+    "links": {
+        "first": "http://api.cr.int.emishealthsolutions.com/persons/2956970c-4065-4379-9438-1e1906c44aeb/allergies?sort=observationId\u0026page[size]=100\u0026page[number]=1"
+    }
+}

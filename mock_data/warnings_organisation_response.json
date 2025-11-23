@@ -1,0 +1,126 @@
+{
+    "data": {
+        "type": "organisation-configurations",
+        "id": "d5753427-76ec-48e8-ab19-7f3308d5ca3d",
+        "attributes": {
+            "general": {
+                "isRepeatNumberOfIssuesAuthorisedRequired": true,
+                "numberOfUnauthorisedIssuesAllowedForNonPrescribers": 10
+            },
+            "medicationReview": {
+                "patientMedicationReviewPeriodInDays": 180,
+                "individualMedicationReviewPeriodInDays": 180,
+                "isIndividualMedicationReviewAllowed": true,
+                "clinicalCodes": [
+                    {
+                        "codeId": 247879015,
+                        "term": "Trainee medical technician",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 250857018,
+                        "term": "Medically retired",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 251193010,
+                        "term": "M.E.Association member",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 265514016,
+                        "term": "Taxi cab driver medical exam",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 265567016,
+                        "term": "Fostering medical examination",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 282653015,
+                        "term": "Medication review",
+                        "isDefault": true
+                    },
+                    {
+                        "codeId": 348109017,
+                        "term": "Allergic rhinitis due to pollen",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 458904017,
+                        "term": "Medication review due",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 1484918019,
+                        "term": "Heart failure annual review",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 1485543011,
+                        "term": "Glandular fever screening test",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 1488436019,
+                        "term": "Asthma medication review",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 1488440011,
+                        "term": "Coronary heart disease medication review",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 1488441010,
+                        "term": "Diabetes medication review",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 1488540013,
+                        "term": "Patient medication advice",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 11561000000115,
+                        "term": "Med3 certificate issued to patient",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 137851000000113,
+                        "term": "Medication review with patient",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 712111000006112,
+                        "term": "Medical practitioner",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 915641000006116,
+                        "term": "[RFC] Reason for care : Myalgic encephalomyelitis (ME)",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 14918711000006110,
+                        "term": "People who are important to me",
+                        "isDefault": false
+                    },
+                    {
+                        "codeId": 14918731000006116,
+                        "term": "How I communicate and how to communicate with me",
+                        "isDefault": false
+                    }
+                ]
+            },
+            "safety": {
+                "minimumNumberOfDaysBetweenIssues": 30,
+                "maximumNumberOfDaysBetweenIssues": 60,
+                "complianceToleranceLower": 0.85,
+                "complianceToleranceUpper": 1.15,
+                "maximumEarlyRepeatPrescriptionWarningDays": 7
+            }
+        }
+    }
+}

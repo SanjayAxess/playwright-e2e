@@ -1,0 +1,223 @@
+{
+    "data": {
+        "type": "preparePrescriptionsResponse",
+        "attributes": {
+            "prescriptionBatch": {
+                "prescriptions": [
+                    {
+                        "uuid": "50eeeeef-c925-4519-9cb2-9a376b5f41a1",
+                        "shortFormIdentifier": "test-shortform-identifier0",
+                        "spineRequestContent": "test-spine-request-content0",
+                        "spineResponseContent": {
+                            "parameters": [
+                                {
+                                    "name": "digest",
+                                    "value": "PFNpZ25lZEluZm8geG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIj48L0Nhbm9uaWNhbGl6YXRpb25NZXRob2Q+PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiPjwvU2lnbmF0dXJlTWV0aG9kPjxSZWZlcmVuY2U+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyI+PC9UcmFuc2Zvcm0+PC9UcmFuc2Zvcm1zPjxEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGVuYyNzaGEyNTYiPjwvRGlnZXN0TWV0aG9kPjxEaWdlc3RWYWx1ZT5EczVrbEVqbjFvQ0UrcHBtcXFzU0o2ZEpaUWFZZ1FkNlUxbVlEM1R6WmM4PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPg=="
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "value": "2024-06-21T10:43:25+00:00"
+                                },
+                                {
+                                    "name": "algorithm",
+                                    "value": "RS1"
+                                }
+                            ]
+                        },
+                        "drugRecordUuids": [
+                            "2acdaa96-0b05-470b-b7bb-e9d5708d2608",
+                            "3e04590b-4430-4842-ace7-a364ebd4e645"
+                        ],
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "c230949a-3d70-417c-ac57-abc13b69e329",
+                        "shortFormIdentifier": "test-shortform-identifier1",
+                        "spineRequestContent": "test-spine-request-content1",
+                        "spineResponseContent": {
+                            "parameters": [
+                                {
+                                    "name": "digest",
+                                    "value": "PFNpZ25lZEluZm8geG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIj48L0Nhbm9uaWNhbGl6YXRpb25NZXRob2Q+PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiPjwvU2lnbmF0dXJlTWV0aG9kPjxSZWZlcmVuY2U+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyI+PC9UcmFuc2Zvcm0+PC9UcmFuc2Zvcm1zPjxEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGVuYyNzaGEyNTYiPjwvRGlnZXN0TWV0aG9kPjxEaWdlc3RWYWx1ZT5EczVrbEVqbjFvQ0UrcHBtcXFzU0o2ZEpaUWFZZ1FkNlUxbVlEM1R6WmM4PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPg=="
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "value": "2024-06-21T10:43:25+00:00"
+                                },
+                                {
+                                    "name": "algorithm",
+                                    "value": "RS1"
+                                }
+                            ]
+                        },
+                        "drugRecordUuids": [
+                            "84e736cd-b7ca-4bca-b5db-037ed929155c",
+                            "4ac5032e-ff01-4731-8fd6-0b2a7a4d0580"
+                        ],
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "5cff9317-7ec8-4c8b-85ec-be19c8aa821b",
+                        "shortFormIdentifier": "test-shortform-identifier2",
+                        "spineRequestContent": "test-spine-request-content2",
+                        "spineResponseContent": {
+                            "parameters": [
+                                {
+                                    "name": "digest",
+                                    "value": "PFNpZ25lZEluZm8geG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIj48L0Nhbm9uaWNhbGl6YXRpb25NZXRob2Q+PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiPjwvU2lnbmF0dXJlTWV0aG9kPjxSZWZlcmVuY2U+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyI+PC9UcmFuc2Zvcm0+PC9UcmFuc2Zvcm1zPjxEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGVuYyNzaGEyNTYiPjwvRGlnZXN0TWV0aG9kPjxEaWdlc3RWYWx1ZT5EczVrbEVqbjFvQ0UrcHBtcXFzU0o2ZEpaUWFZZ1FkNlUxbVlEM1R6WmM4PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPg=="
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "value": "2024-06-21T10:43:25+00:00"
+                                },
+                                {
+                                    "name": "algorithm",
+                                    "value": "RS1"
+                                }
+                            ]
+                        },
+                        "drugRecordUuids": [
+                            "71f8be4b-eb99-4a8a-a9c3-1e5e9e8ac950"
+                        ],
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "25e86445-8b5e-48a9-889f-66e770b19642",
+                        "shortFormIdentifier": "test-shortform-identifier3",
+                        "spineRequestContent": "test-spine-request-content3",
+                        "spineResponseContent": {
+                            "parameters": [
+                                {
+                                    "name": "digest",
+                                    "value": "PFNpZ25lZEluZm8geG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIj48L0Nhbm9uaWNhbGl6YXRpb25NZXRob2Q+PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiPjwvU2lnbmF0dXJlTWV0aG9kPjxSZWZlcmVuY2U+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyI+PC9UcmFuc2Zvcm0+PC9UcmFuc2Zvcm1zPjxEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGVuYyNzaGEyNTYiPjwvRGlnZXN0TWV0aG9kPjxEaWdlc3RWYWx1ZT5EczVrbEVqbjFvQ0UrcHBtcXFzU0o2ZEpaUWFZZ1FkNlUxbVlEM1R6WmM4PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPg=="
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "value": "2024-06-21T10:43:25+00:00"
+                                },
+                                {
+                                    "name": "algorithm",
+                                    "value": "RS1"
+                                }
+                            ]
+                        },
+                        "drugRecordUuids": [
+                            "89d9280f-7ff0-4300-bc2a-22cf23631fb4"
+                        ],
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "32cad9fc-05a0-4679-9065-774b4f2bbb93",
+                        "shortFormIdentifier": "test-shortform-identifier4",
+                        "spineRequestContent": "test-spine-request-content4",
+                        "spineResponseContent": {
+                            "parameters": [
+                                {
+                                    "name": "digest",
+                                    "value": "PFNpZ25lZEluZm8geG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIj48L0Nhbm9uaWNhbGl6YXRpb25NZXRob2Q+PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiPjwvU2lnbmF0dXJlTWV0aG9kPjxSZWZlcmVuY2U+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyI+PC9UcmFuc2Zvcm0+PC9UcmFuc2Zvcm1zPjxEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGVuYyNzaGEyNTYiPjwvRGlnZXN0TWV0aG9kPjxEaWdlc3RWYWx1ZT5EczVrbEVqbjFvQ0UrcHBtcXFzU0o2ZEpaUWFZZ1FkNlUxbVlEM1R6WmM4PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPg=="
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "value": "2024-06-21T10:43:25+00:00"
+                                },
+                                {
+                                    "name": "algorithm",
+                                    "value": "RS1"
+                                }
+                            ]
+                        },
+                        "drugRecordUuids": [
+                            "4b420290-7583-431b-8e76-c69fe634afb5"
+                        ],
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "8d621893-d3a7-4296-a2f5-759196503cde",
+                        "shortFormIdentifier": "test-shortform-identifier5",
+                        "spineRequestContent": "test-spine-request-content5",
+                        "spineResponseContent": {
+                            "parameters": [
+                                {
+                                    "name": "digest",
+                                    "value": "PFNpZ25lZEluZm8geG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIj48L0Nhbm9uaWNhbGl6YXRpb25NZXRob2Q+PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiPjwvU2lnbmF0dXJlTWV0aG9kPjxSZWZlcmVuY2U+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyI+PC9UcmFuc2Zvcm0+PC9UcmFuc2Zvcm1zPjxEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGVuYyNzaGEyNTYiPjwvRGlnZXN0TWV0aG9kPjxEaWdlc3RWYWx1ZT5EczVrbEVqbjFvQ0UrcHBtcXFzU0o2ZEpaUWFZZ1FkNlUxbVlEM1R6WmM4PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPg=="
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "value": "2024-06-21T10:43:25+00:00"
+                                },
+                                {
+                                    "name": "algorithm",
+                                    "value": "RS1"
+                                }
+                            ]
+                        },
+                        "drugRecordUuids": [
+                            "c91a5173-979c-42e2-98db-7b9d37094764"
+                        ],
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

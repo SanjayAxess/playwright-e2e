@@ -1,0 +1,6 @@
+{
+    "data": [],
+    "links": {
+        "first": "http://api.meds.int.emishealthsolutions.com/persons/046691e8-b7ec-4b66-9066-07a0ba7378f0/medications?page[size]=50\u0026page[number]=1\u0026include=authorisedUser,signingUser,preparation\u0026filter=equals(status,\u0027Current\u0027)\u0026group=PrescriptionType\u0026sort=DrugName"
+    }
+}

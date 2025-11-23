@@ -1,0 +1,92 @@
+{
+    "data": {
+        "id": "ca595553-e26d-423e-b6cf-ba65291b88df",
+        "type": "issuePrescriptionBatch",
+        "attributes": {
+            "epsResponse": {
+                "prescriptions": [
+                    {
+                        "uuid": "04fd017d-1904-4c8f-9629-e4665b6113c0",
+                        "spineRequestContent": "test-spine-request-content0",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "uuid": "34fe0a06-6216-4ece-88be-7b7b972ed93a",
+                        "spineRequestContent": "test-spine-request-content1",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "uuid": "729dcae7-26fe-4552-9531-b5c6379fa532",
+                        "spineRequestContent": "test-spine-request-content2",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "uuid": "429e84b8-ba19-4d02-b5fc-5b476196a7b5",
+                        "spineRequestContent": "test-spine-request-content3",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "uuid": "cfbed58a-922f-4be4-98df-aa6020fee0cb",
+                        "spineRequestContent": "test-spine-request-content4",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

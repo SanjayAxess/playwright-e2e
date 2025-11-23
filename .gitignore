@@ -1,0 +1,12 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+storage-state.*.json
+session-storage-state.*.json
+allure-results
+allure-report
+package-lock.json
+session-storage.txt
+cis2.txt

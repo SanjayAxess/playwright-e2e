@@ -1,0 +1,10 @@
+{
+  "errors": [
+    {
+      "id": "4b0be192-d210-43fe-958b-b15854e66f05",
+      "status": "403",
+      "title": "Forbidden",
+      "detail": "Person Confidential for the User"
+    }
+  ]
+}

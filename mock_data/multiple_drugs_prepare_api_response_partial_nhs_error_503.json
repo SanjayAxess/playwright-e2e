@@ -1,0 +1,94 @@
+{
+    "data": {
+        "type": "preparePrescriptionsResponse",
+        "attributes": {
+            "prescriptionBatch": {
+                "prescriptions": [
+                    {
+                        "uuid": "556797e5-0ada-418d-b57b-b80098d87003",
+                        "shortFormIdentifier": "test-shortform-identifier0",
+                        "spineRequestContent": "test-spine-request-content0",
+                        "spineResponseContent": {
+                            "parameters": [
+                                {
+                                    "name": "digest",
+                                    "value": "PFNpZ25lZEluZm8geG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIj48L0Nhbm9uaWNhbGl6YXRpb25NZXRob2Q+PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiPjwvU2lnbmF0dXJlTWV0aG9kPjxSZWZlcmVuY2U+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyI+PC9UcmFuc2Zvcm0+PC9UcmFuc2Zvcm1zPjxEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGVuYyNzaGEyNTYiPjwvRGlnZXN0TWV0aG9kPjxEaWdlc3RWYWx1ZT5EczVrbEVqbjFvQ0UrcHBtcXFzU0o2ZEpaUWFZZ1FkNlUxbVlEM1R6WmM4PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPg=="
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "value": "2024-06-21T10:43:25+00:00"
+                                },
+                                {
+                                    "name": "algorithm",
+                                    "value": "RS1"
+                                }
+                            ]
+                        },
+                        "drugRecordUuids": [
+                            "2acdaa96-0b05-470b-b7bb-e9d5708d2608",
+                            "3e04590b-4430-4842-ace7-a364ebd4e645",
+                            "37ecffd3-0716-4874-838b-864d605d7bc5",
+                            "c0651095-c6ca-4a8d-b92a-6294bc3a3c90"
+                        ]
+                    },
+                    {
+                        "uuid": "dde6f9f3-8768-4725-958a-6d4ef2d888bb",
+                        "shortFormIdentifier": "test-shortform-identifier1",
+                        "spineRequestContent": "test-spine-request-content1",
+                        "spineResponseContent": {
+                            "parameters": [
+                                {
+                                    "name": "digest",
+                                    "value": "PFNpZ25lZEluZm8geG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIj48L0Nhbm9uaWNhbGl6YXRpb25NZXRob2Q+PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiPjwvU2lnbmF0dXJlTWV0aG9kPjxSZWZlcmVuY2U+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyI+PC9UcmFuc2Zvcm0+PC9UcmFuc2Zvcm1zPjxEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGVuYyNzaGEyNTYiPjwvRGlnZXN0TWV0aG9kPjxEaWdlc3RWYWx1ZT5EczVrbEVqbjFvQ0UrcHBtcXFzU0o2ZEpaUWFZZ1FkNlUxbVlEM1R6WmM4PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPg=="
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "value": "2024-06-21T10:43:25+00:00"
+                                },
+                                {
+                                    "name": "algorithm",
+                                    "value": "RS1"
+                                }
+                            ]
+                        },
+                        "drugRecordUuids": [
+                            "b1516a60-baff-442d-9818-f6792e6044cb"
+                        ]
+                    },
+                    {
+                        "uuid": "b50fca40-2b6b-49ab-8c28-49cd899f629b",
+                        "shortFormIdentifier": "test-shortform-identifier2",
+                        "spineRequestContent": "test-spine-request-content2",
+                        "spineResponseContent": {
+                            "parameters": [
+                                {
+                                    "name": "digest",
+                                    "value": "PFNpZ25lZEluZm8geG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiPjxDYW5vbmljYWxpemF0aW9uTWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8xMC94bWwtZXhjLWMxNG4jIj48L0Nhbm9uaWNhbGl6YXRpb25NZXRob2Q+PFNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiPjwvU2lnbmF0dXJlTWV0aG9kPjxSZWZlcmVuY2U+PFRyYW5zZm9ybXM+PFRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyI+PC9UcmFuc2Zvcm0+PC9UcmFuc2Zvcm1zPjxEaWdlc3RNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGVuYyNzaGEyNTYiPjwvRGlnZXN0TWV0aG9kPjxEaWdlc3RWYWx1ZT5EczVrbEVqbjFvQ0UrcHBtcXFzU0o2ZEpaUWFZZ1FkNlUxbVlEM1R6WmM4PTwvRGlnZXN0VmFsdWU+PC9SZWZlcmVuY2U+PC9TaWduZWRJbmZvPg=="
+                                },
+                                {
+                                    "name": "timestamp",
+                                    "value": "2024-06-21T10:43:25+00:00"
+                                },
+                                {
+                                    "name": "algorithm",
+                                    "value": "RS1"
+                                }
+                            ]
+                        },
+                        "drugRecordUuids": [
+                            "eb70f837-0bf3-4ef6-80ec-c0fece8c5004"
+                        ],
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "503",
+                                "title": "Error",
+                                "detail": "The NHS API is currently unavailable. Please try again later."
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

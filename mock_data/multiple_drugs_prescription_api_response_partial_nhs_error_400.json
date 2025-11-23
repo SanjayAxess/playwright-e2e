@@ -1,0 +1,82 @@
+{
+    "data": {
+        "id": "ca595553-e26d-423e-b6cf-ba65291b88df",
+        "type": "issuePrescriptionBatch",
+        "attributes": {
+            "epsResponse": {
+                "prescriptions": [
+                    {
+                        "uuid": "367ff2af-9a77-41ad-b71c-2a94c1ad2fc8",
+                        "spineRequestContent": "test-spine-request-content0",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "uuid": "c518464e-4e4e-43a9-ba5d-aba2922614a9",
+                        "spineRequestContent": "test-spine-request-content1",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        },
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a237ef43-43e3-4383-931f-fb56154b9124",
+                        "spineRequestContent": "test-spine-request-content2",
+                        "spineResponseContent": {
+                            "resourceType": "OperationOutcome",
+                            "meta": {
+                                "lastUpdated": "2025-01-06T05:54:29+00:00"
+                            },
+                            "issue": [
+                                {
+                                    "severity": "information",
+                                    "code": "informational"
+                                }
+                            ]
+                        },
+                        "errors": [
+                            {
+                                "id": "2d202261-2a8e-4798-badf-8c454f4d3e2b",
+                                "status": "400",
+                                "title": "Error",
+                                "detail": "Expected all MedicationRequests to have the same value for dispenseRequest.validityPeriod. Received [{\"start\":\"2024-10-15\"},{\"start\":\"2024-10-14\"}].",
+                                "source": {
+                                    "pointer": "Bundle.entry.resource.ofType(MedicationRequest).dispenseRequest.validityPeriod"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

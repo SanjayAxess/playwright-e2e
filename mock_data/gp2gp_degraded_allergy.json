@@ -1,0 +1,42 @@
+{
+    "data": [
+        {
+            "type": "allergy",
+            "id": "e524f410-83ad-40af-9ea1-549e7c8b4d13",
+            "attributes": {
+                "onlineAccessRestricted": false,
+                "provisional": false,
+                "episodicity": "First",
+                "isDegrade": true,
+                "qualifiers": [],
+                "authorisingUser": "TEST, Emis (Dr)",
+                "enteredByUser": "TEST, Emis (Dr)",
+                "originalTerm": "Transfer-degraded drug allergy",
+                "effectiveDate": {
+                    "precision": "YMD",
+                    "value": "2024-10-30T00:00:00"
+                },
+                "isConfidential": false,
+                "complete": true,
+                "isProblemEpisode": true
+            },
+            "relationships": {
+                "children": {
+                    "data": []
+                },
+                "code": {
+                    "data": {
+                        "type": "ern:emis:term:code",
+                        "id": "294801000000114"
+                    }
+                },
+                "consultation-section": {
+                    "data": null
+                }
+            }
+        }
+    ],
+    "links": {
+        "first": "http://api.cr.int.emishealthsolutions.com/persons/09403f75-dd55-40db-ba85-a64f1577d04a/allergies?sort=observationId\u0026filter=any(code.Id,\u00271572871000006117\u0027,\u0027294801000000114\u0027)\u0026page[size]=50\u0026page[number]=1"
+    }
+}
