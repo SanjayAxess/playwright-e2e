@@ -28,6 +28,7 @@ jobs:
       url: "https://prod-home.integrate.com/"
       buyer_username: "automation-prod@integrateteam.com"
       mongo_db: "neo_prod"
+      tags: "@regression"
     secrets:
       buyer_password: ${{ secrets.BUYER_PASSWORD_PROD }}
       org_id: ${{ secrets.ORG_ID_PROD }}

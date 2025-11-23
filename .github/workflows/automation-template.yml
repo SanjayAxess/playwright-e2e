@@ -23,6 +23,12 @@ on:
         type: string
         required: true
 
+      tags:
+        description: "Tags to filter Playwright tests"
+        type: string
+        required: false
+        default: "smoke"
+
     secrets:
       buyer_password:
         required: true
@@ -105,7 +111,8 @@ jobs:
         run: |
           npx playwright test \
             --project=chromium \
-            --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+            --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} \
+            ${{ inputs.tags && `--grep "${inputs.tags}"` }}
 
       - name: Mark test end
         id: end

@@ -22,6 +22,7 @@ jobs:
       url: "https://staging-home.integrate.com/"
       buyer_username: "qa-buyer-automation-staging@integrateteam.com"
       mongo_db: "neo_staging"
+      tags: "@smoke"
     secrets:
       buyer_password: ${{ secrets.BUYER_PASSWORD_STG }}
       org_id: ${{ secrets.ORG_ID_STG }}
