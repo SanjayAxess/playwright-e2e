@@ -2,9 +2,11 @@ name: Run Tests - STAGING
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - PGT1-3077
+    inputs:
+      tags:
+        description: "Tags to filter Playwright tests"
+        required: false
+        default: "@smoke"
   repository_dispatch:
     types:
       - trigger-tests-stg

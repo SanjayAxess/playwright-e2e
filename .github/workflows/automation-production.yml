@@ -2,6 +2,11 @@ name: Run Tests - PRODUCTION
 
 on:
   workflow_dispatch:
+    inputs:
+      tags:
+        description: "Tags to filter Playwright tests"
+        required: false
+        default: "@smoke" 
   repository_dispatch:
     types:
       - trigger-tests-prod
