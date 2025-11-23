@@ -1,0 +1,360 @@
+name: Automation Test Execution
+
+on:
+  repository_dispatch:
+    types:
+      - trigger-automation-tests-teams
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests'
+        required: false
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - prod
+  schedule:
+    - cron: '0 18 * * *'
+
+jobs:
+  start-timer:
+    name: Start Timer (pre-shard)
+    runs-on: [DevOpsLargeRunner]
+    outputs:
+      start_ts: ${{ steps.mark.outputs.start_ts }}
+    steps:
+      - name: Mark overall test start
+        id: mark
+        shell: bash
+        run: echo "start_ts=$(date +%s)" >> "$GITHUB_OUTPUT"
+
+  run-tests:
+    name: Run Playwright Tests (${{ github.event.inputs.environment || 'staging' }})
+    runs-on: [DevOpsLargeRunner]
+    needs: start-timer
+    outputs: 
+      test_minsec: ${{ steps.test-duration.outputs.minsec }}
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        shardTotal: [10]
+
+    env:
+      HEADLESS: true
+      TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Select environment configuration
+        id: env-config
+        run: |
+          ENV="${{ github.event.inputs.environment || 'staging' }}"
+          echo "environment=$ENV" >> $GITHUB_OUTPUT
+          
+          case "$ENV" in
+            staging)
+              echo "ENV_NICKNAME=STAGING" >> $GITHUB_ENV
+              echo "URL=https://staging-home.integrate.com/" >> $GITHUB_ENV
+              echo "BUYER_USERNAME=qa-buyer-automation-staging@integrateteam.com" >> $GITHUB_ENV
+              echo "BUYER_PASSWORD=${{ secrets.BUYER_PASSWORD }}" >> $GITHUB_ENV
+              echo "ORG_ID=${{ secrets.ORG_ID }}" >> $GITHUB_ENV
+              echo "MONGO_URI=${{ secrets.MONGO_URI }}" >> $GITHUB_ENV
+              echo "MONGO_DB=neo_staging" >> $GITHUB_ENV
+              ;;
+            prod)
+              echo "ENV_NICKNAME=PRODUCTION" >> $GITHUB_ENV
+              echo "URL=https://home.integrate.com/" >> $GITHUB_ENV
+              echo "BUYER_USERNAME=qa-buyer-automation-prod@integrateteam.com" >> $GITHUB_ENV
+              echo "BUYER_PASSWORD=${{ secrets.BUYER_PASSWORD_PROD }}" >> $GITHUB_ENV
+              echo "ORG_ID=${{ secrets.ORG_ID_PROD }}" >> $GITHUB_ENV
+              echo "MONGO_URI=${{ secrets.MONGO_URI_PROD }}" >> $GITHUB_ENV
+              echo "MONGO_DB=neo_prod" >> $GITHUB_ENV
+              ;;
+            *)
+              echo "❌ Unknown environment: $ENV"
+              echo "Supported environments: staging, prod"
+              exit 1
+              ;;
+          esac
+          
+          echo "✅ Configured for environment: $ENV"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Create .npmrc with Nexus auth token
+        run: |
+          cd $PROJ_DIR
+          echo "//nexus.integrate.ninja/repository/integrate-npm-group/:_authToken=${{ secrets.NEXUS_NPM_TOKEN }}
+          registry=https://nexus.integrate.ninja/repository/integrate-npm-group/
+          always-auth=true">.npmrc
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Chromium Browser
+        run: npx playwright install chromium
+
+      - name: Mark test start
+        id: tstart
+        run: echo "start=$(date +%s)" >> $GITHUB_OUTPUT
+
+      # Run tests with list + pie reporter
+      - name: Run Playwright Tests
+        run: npx playwright test --project=chromium --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+
+      - name: Mark test end
+        if: always()
+        id: tend
+        run: echo "end=$(date +%s)" >> $GITHUB_OUTPUT
+
+      - name: Compute test duration
+        if: always()
+        id: test-duration
+        shell: bash
+        run: |
+          start='${{ steps.tstart.outputs.start }}'
+          end='${{ steps.tend.outputs.end }}'
+          if [ -z "$start" ] || [ -z "$end" ]; then start=0; end=0; fi
+          dur=$((end-start))
+          if [ "$dur" -lt 0 ]; then dur=0; fi
+          mins=$((dur/60))
+          secs=$((dur%60))
+          hms=$(printf "%02d:%02d:%02d" $((dur/3600)) $(((dur%3600)/60)) $((dur%60)))
+          echo "seconds=$dur" >> $GITHUB_OUTPUT
+          echo "minutes=$mins" >> $GITHUB_OUTPUT
+          minutes_dec=$(node -p "(${dur}/60).toFixed(1)")
+          echo "minutes_dec=$minutes_dec" >> $GITHUB_OUTPUT
+          echo "minsec=${mins}m ${secs}s" >> $GITHUB_OUTPUT
+          echo "hms=$hms" >> $GITHUB_OUTPUT
+
+      - name: Upload pie.json to GitHub Actions Artifacts
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: pie.json-${{ steps.env-config.outputs.environment }}-${{ matrix.shardIndex }}
+          path: blob-report/pie.json
+          retention-days: 1
+
+      - name: Upload blob report to GitHub Actions Artifacts
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: blob-report-${{ steps.env-config.outputs.environment }}-${{ matrix.shardIndex }}
+          path: blob-report
+          retention-days: 1
+
+  merge-reports:
+    name: Merge Playwright Reports (${{ github.event.inputs.environment || 'staging' }})
+    needs: [start-timer, run-tests] # This ensures that merge happens only after the tests complete
+    runs-on: [DevOpsLargeRunner]
+
+    outputs:
+      passed: ${{ steps.results.outputs.passed }}
+      failed: ${{ steps.results.outputs.failed }}
+      skipped: ${{ steps.results.outputs.skipped }}
+      flaky: ${{ steps.results.outputs.flaky }}
+      pieUrl: ${{ steps.results.outputs.pieUrl }}
+      passPercentage: ${{ steps.results.outputs.passPercentage }}
+
+    if: always()
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+
+      - name: Create .npmrc with Nexus auth token
+        run: |
+          cd $PROJ_DIR
+          echo "//nexus.integrate.ninja/repository/integrate-npm-group/:_authToken=${{ secrets.NEXUS_NPM_TOKEN }}
+          registry=https://nexus.integrate.ninja/repository/integrate-npm-group/
+          always-auth=true">.npmrc
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install jq and bc for JSON processing
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq bc
+
+      - name: Download blob reports from GitHub Actions Artifacts
+        if: ${{ !cancelled() }}
+        uses: actions/download-artifact@v5
+        with:
+          path: all-blob-reports
+          pattern: blob-report-*
+          merge-multiple: true
+
+      - name: Merge into HTML Report
+        if: ${{ !cancelled() }}
+        run: npx playwright merge-reports --reporter html ./all-blob-reports
+
+      - name: Download pie.json from GitHub Actions Artifacts
+        if: ${{ !cancelled() }}
+        uses: actions/download-artifact@v5
+        with:
+          path: all-pie-reports
+          pattern: pie.json-*
+          merge-multiple: false
+
+      - name: Merge pie.json
+        if: ${{ !cancelled() }}
+        run: node scripts/merge-pie-json.js all-pie-reports
+
+      - name: Upload HTML report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ github.event.inputs.environment || 'staging' }}
+          path: playwright-report
+          retention-days: 14
+
+        # Debug pie.json
+      - name: Debug pie.json
+        if: always()
+        run: |
+          echo "Checking for pie.json..."
+          ls -R playwright-report || echo "❌ playwright-report missing"
+          if [ -f playwright-report/pie.json ]; then
+            echo "✅ pie.json found!"
+            cat playwright-report/pie.json
+          else
+            echo "❌ pie.json missing!"
+            
+          fi
+      # Read counts from pie.json
+      - name: Read results
+        id: results
+        if: always()
+        run: |
+          if [ -f playwright-report/pie.json ]; then
+            passed=$(jq -r '.passed' playwright-report/pie.json)
+            failed=$(jq -r '.failed' playwright-report/pie.json)
+            skipped=$(jq -r '.skipped' playwright-report/pie.json)
+            flaky=$(jq -r '.flaky' playwright-report/pie.json)
+            pieUrl=$(jq -r '.pieUrl' playwright-report/pie.json)
+            total=$((passed + failed + skipped + flaky))
+            if [ "$total" -gt 0 ]; then
+              passPercentage=$((passed * 100 / total))
+            else
+              passPercentage=0
+            fi
+          else
+            passed=0
+            failed=0
+            skipped=0
+            flaky=0
+            pieUrl=""
+            passPercentage=0
+          fi
+          echo "passed=$passed" >> $GITHUB_OUTPUT
+          echo "failed=$failed" >> $GITHUB_OUTPUT
+          echo "skipped=$skipped" >> $GITHUB_OUTPUT
+          echo "flaky=$flaky" >> $GITHUB_OUTPUT
+          echo "pieUrl=$pieUrl" >> $GITHUB_OUTPUT
+          echo "passPercentage=$passPercentage" >> $GITHUB_OUTPUT
+
+      # (Teams notification moved to deploy-report for a single post after publish)
+
+      - name: Remove npm auth
+        if: always()
+        run: rm -f ~/.npmrc
+
+  deploy-report:
+    name: Publish HTML Report and Notify Teams (${{ github.event.inputs.environment || 'staging' }})
+    needs: [merge-reports, start-timer]
+    if: ${{ always() && github.ref == 'refs/heads/main'}}
+    runs-on: [DevOpsLargeRunner]
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Download merged HTML report artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-report-${{ github.event.inputs.environment || 'staging' }}
+          path: ./playwright-report
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./playwright-report
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Notify Teams with Workflow and HTML report links
+        env:
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          PAGE_URL: ${{ steps.deploy.outputs.page_url }}
+          START_TS: ${{ needs.start-timer.outputs.start_ts }}
+        run: |
+          ENV="${{ github.event.inputs.environment || 'staging' }}"
+          STATUS="${{ needs.merge-reports.result }}"
+          COLOR="Good"; [ "$STATUS" != "success" ] && COLOR="Attention"
+          CURRENT_TIME="$(TZ='America/Phoenix' date '+%Y-%m-%d %I:%M %p %Z')"
+          REPORT_URL="${PAGE_URL%/}/index.html"
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          NOW_TS="$(date +%s)"
+          if [ -z "$START_TS" ]; then START_TS="$NOW_TS"; fi
+          OVERALL_SEC="$((NOW_TS - START_TS))"
+          if [ "$OVERALL_SEC" -lt 0 ]; then OVERALL_SEC=0; fi
+          OVERALL_MIN="$((OVERALL_SEC/60))"
+          OVERALL_REM_SEC="$((OVERALL_SEC%60))"
+          OVERALL_MINSEC="${OVERALL_MIN}m ${OVERALL_REM_SEC}s"
+
+          cat > message.json <<EOF
+          {
+            "type": "message",
+            "attachments": [
+              {
+                "contentType": "application/vnd.microsoft.card.adaptive",
+                "content": {
+                  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                  "type": "AdaptiveCard",
+                  "version": "1.4",
+                  "body": [
+                    { "type": "TextBlock", "size": "Large", "weight": "Bolder", "text": "📢 Playwright Tests completed ($ENV): $STATUS", "color": "$COLOR" },
+                    {
+                      "type": "FactSet",
+                      "facts": [
+                        { "title": "🌍 Environment", "value": "$ENV" },
+                        { "title": "✅ Passed", "value": "${{ needs.merge-reports.outputs.passed }}" },
+                        { "title": "❌ Failed", "value": "${{ needs.merge-reports.outputs.failed }}" },
+                        { "title": "⚠️ Skipped", "value": "${{ needs.merge-reports.outputs.skipped }}" },
+                        { "title": "⚡ Flaky", "value": "${{ needs.merge-reports.outputs.flaky }}" },
+                        { "title": "📊 Pass %", "value": "${{ needs.merge-reports.outputs.passPercentage }}%" },
+                        { "title": "⏱ Total Execution Time", "value": "$OVERALL_MINSEC" },
+                        { "title": "🕒 Completed At (AZ)", "value": "$CURRENT_TIME" }
+                      ]
+                    },
+                    {
+                      "type": "Image",
+                      "url": "${{ needs.merge-reports.outputs.pieUrl }}",
+                      "altText": "Test Results Pie Chart",
+                      "size": "Stretch"
+                    }
+                  ],
+                  "actions": [
+                    { "type": "Action.OpenUrl", "title": "🔗 View Workflow Run", "url": "$RUN_URL" },
+                    { "type": "Action.OpenUrl", "title": "📄 Open HTML Report", "url": "$REPORT_URL" }
+                  ]
+                }
+              }
+            ]
+          }
+          EOF
+          curl -H "Content-Type: application/json" -d @message.json "$TEAMS_WEBHOOK_URL"
