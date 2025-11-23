@@ -12,6 +12,17 @@ on:
     - cron: "0 18 * * *"
 
 jobs:
+  start-timer:
+    name: Start Timer
+    runs-on: [DevOpsLargeRunner]
+    outputs:
+      start_ts: ${{ steps.mark.outputs.start_ts }}
+
+    steps:
+      - name: Set start timestamp
+        id: mark
+        run: echo "start_ts=$(date +%s)" >> "$GITHUB_OUTPUT"
+        
   call-template:
     uses: ./.github/workflows/automation-template.yml
     with:
